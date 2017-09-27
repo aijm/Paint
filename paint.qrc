@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Paint"/>
+    <qresource prefix="/">
+        <file>images/line.png</file>
+        <file>images/ellipse.png</file>
+        <file>images/rect.png</file>
+    </qresource>
+</RCC>
