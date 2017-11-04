@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <Figure.h>
 using namespace std;
-enum PaintMode { CLINE, CRECT, CELLIPSE };
+enum PaintMode { CLINE, CRECT, CELLIPSE, CPOLYGON, CFREEHAND }; //图形选项
 class PaintWidget :public QWidget
 {
 	Q_OBJECT
@@ -29,10 +29,12 @@ protected:
 private:
 	QPixmap *m_pixmap;
 	CFigure *m_currentfig;
-	vector<CFigure*> m_FigrueArray;
+	CPolygon *m_polygon;
+	vector<CFigure*> m_FigrueArray; //保存图形指针
+	vector<QPoint> vertex;
 	QPoint m_lastPos;
 	paintstyle m_paintstyle;
-	PaintMode m_paintmode = CELLIPSE;
+	PaintMode m_paintmode = CELLIPSE; //默认为椭圆
 	bool m_leftpressed = false;
 };
 

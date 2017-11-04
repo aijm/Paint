@@ -14,17 +14,22 @@ public:
 	void CreateActions();
 
 	private slots:
+	void on_freehandtriggered();
 	void on_linetriggered();
 	void on_recttriggered();
 	void on_ellipsetriggered();
+	void on_polygontriggered();
 	void on_selectcolorAct();
 
 private:
 	PaintWidget *m_paintwidget;
 	QActionGroup *paintmodeGroup;
+	QAction *FreehandAct;
 	QAction *LineAct;
 	QAction *RectAct;
 	QAction *EllipseAct;
+	QAction *PolygonAct;
+	
 
 	QAction *selectcolorAct;
 	QMenu *paintmodeMenu;
